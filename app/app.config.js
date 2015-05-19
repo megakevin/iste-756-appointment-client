@@ -5,7 +5,7 @@
 (function() {
     'use strict';
     var appConfig = {
-        baseUrl: 'http://localhost:8080/'//Service base URL
+        baseUrl: 'http://localhost:8080/appointment-server/webresources/'//Service base URL
     };
     angular.module('app').value('appConfig', appConfig);
 }

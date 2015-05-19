@@ -1,0 +1,163 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box box-primary ">
+            <div class="box-header with-border">
+                <h3 class="box-title">Complete the appointment information</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <!--Content-->
+                <form role="form" name="add">
+                    <div class="box-body">
+                        <div class="row">
+                            <!--patient-->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Patient</label>
+                                    <div>
+                                        <ui-select ng-model="vm.patient" theme="select2" data-ng-disabled="disabled" style="min-width: 100%;">
+                                            <ui-select-match placeholder="Select the patient...">
+                                                {{$select.selected.name}}
+                                            </ui-select-match>
+                                            <ui-select-choices
+                                                    repeat="patient in vm.patients | propsFilter: {name: $select.search}">
+                                                <div ng-bind-html="patient.name | highlight: $select.search"></div>
+                                                <small>
+                                                    Insurance: {{patient.insurance == 'Y'? "Yes": "No";}}<br>
+                                                    Physician: <span ng-bind-html="''+patient.physician.name | highlight: $select.search"></span>
+                                                </small>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /patient-->
+                            <!-- phlebotomy -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Phlebotomist</label>
+                                    <div>
+                                        <ui-select ng-model="vm.phlebotomist" theme="select2" ng-disabled="disabled"
+                                                   style="min-width: 100%;">
+                                            <ui-select-match placeholder="Select the phlebotomist...">
+                                                {{$select.selected.name}}
+                                            </ui-select-match>
+                                            <ui-select-choices
+                                                    repeat="phlebotomist in vm.phlebotomists | propsFilter: {name: $select.search}">
+                                                <div ng-bind-html="phlebotomist.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/phlebotomy-->
+                            <!--psc -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Patient Service Center</label>
+
+                                    <div>
+                                        <ui-select ng-model="vm.servicecenter" theme="select2" ng-disabled="disabled"
+                                                   style="min-width: 100%;">
+                                            <ui-select-match
+                                                    placeholder="Select the patient service center...">
+                                                {{$select.selected.name}}
+                                            </ui-select-match>
+                                            <ui-select-choices
+                                                    repeat="person in vm.servicecenters | propsFilter: {name: $select.search}">
+                                                <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/psc-->
+                        </div>
+                        <div class="row">
+                            <!-- date-->
+                            <div class="col-sm-6 col-md-4">
+                                <!-- Basic example -->
+                                <div class="form-group">
+                                    <label class="control-label">Date</label>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i> </span>
+                                        <input type="text" class="form-control" ng-model="vm.appointmentDate" name="date" data-autoclose="1" bs-datepicker>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--/date-->
+                            <!--time-->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <label class="">Time</label><br>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-clock-o"></i> </span>
+                                        <input type="text" class="form-control" size="1" ng-model="vm.appointmentTime" name="time"
+                                               bs-timepicker data-time-format="HH:mm" data-length="1"
+                                               data-minute-step="15"
+                                               data-arrow-behavior="picker">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--/time-->
+                            <!-- lab test -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Lab Test</label>
+                                    <div>
+                                        <ui-select ng-model="vm.labtest" theme="select2" ng-disabled="disabled"
+                                                   style="min-width: 100%;">
+                                            <ui-select-match
+                                                    placeholder="Select the patient service center...">
+                                                {{$select.selected.name}}
+                                            </ui-select-match>
+                                            <ui-select-choices
+                                                    repeat="labtest in vm.labtests | propsFilter: {name: $select.search, cost: $select.search}">
+                                                <div ng-bind-html="labtest.name | highlight: $select.search"></div>
+                                                <small>
+                                                    Cost: <span ng-bind-html="''+labtest.cost | highlight: $select.search"></span>
+                                                </small>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/lab test -->
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Diagnosis</label>
+                                    <div>
+                                        <ui-select ng-model="vm.diagnosis" theme="select2" ng-disabled="disabled"
+                                                   style="min-width: 100%;">
+                                            <ui-select-match
+                                                    placeholder="Select the diagnosis...">
+                                                {{$select.selected.name}}
+                                            </ui-select-match>
+                                            <ui-select-choices
+                                                    repeat="diagnosis in vm.diagnoses | propsFilter: {name: $select.search, age: $select.search}">
+                                                <div ng-bind-html="diagnosis.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</div>
+
+

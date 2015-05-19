@@ -4,203 +4,223 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html data-ng-app="app">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Appointment Management</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- Font Awesome Icons -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <!-- Theme style -->
-    <link href="css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/app.css" rel="stylesheet" type="text/css" />
+    <link href="css/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/select.css" rel="stylesheet" type="text/css">
+    <link href="css/angular-motion.min.css" rel="stylesheet" type="text/css">
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link href="css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-      <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link href="css/skins/skin-blue.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |
-  |               | sidebar-mini                            |
-  |---------------------------------------------------------|
-  -->
-  <body class="skin-blue sidebar-mini ng-cloak" ng-cloak>
-    <div class="wrapper">
 
-      <!-- Main Header -->
-      <header class="main-header">
+</head>
+<body class="skin-blue sidebar-mini ng-cloak" ng-cloak>
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
 
         <!-- Logo -->
         <a ui-sref="index" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>PM</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Appointment</b> MGM</span>
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>A</b>PM</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Appointment</b> MGM</span>
         </a>
 
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top " role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <!-- Navbar Right Menu -->
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- Messages: style can be found in dropdown.less-->
-              <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
-                <!-- Menu Toggle Button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- The user image in the navbar-->
-                  <img src="img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Alexander Pierce</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- The user image in the menu -->
-                  <li class="user-header">
-                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                    <p>
-                      Alexander Pierce - SCA
-                      <small>Employee since Nov. 2012</small>
-                    </p>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img src="img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">Alexander Pierce</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
+                            <li class="user-header">
+                                <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+
+                                <p>
+                                    Alexander Pierce - SCA
+                                    <small>Employee since Nov. 2012</small>
+                                </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
                 </ul>
-              </li>
-              <!-- Control Sidebar Toggle Button -->
-            </ul>
-          </div>
+            </div>
         </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
 
         <!-- sidebar: style can be found in sidebar.less -->
+        <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                </div>
+                <div class="pull-left info">
+                    <p>Alexander Pierce</p>
+                    <!-- Status -->
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
             </div>
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
-              <!-- Status -->
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-
-
-          <!-- Sidebar Menu -->
-          <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li><a ui-sref="index" ui-sref-active="active"><i class='fa fa-home fa-lg'></i> <span>Home</span></a></li>
-            <li><a ui-sref="dashboard" ui-sref-active="active"><i class='fa fa-dashboard fa-lg'></i> <span>Dashboard</span></a></li>
-            <li><a ui-sref="appointmentindex" ui-sref-active="active"><i class='fa fa-calendar fa-lg'></i> <span>Appointment</span></a></li>
-            <li><a ui-sref="patientindex" ui-sref-active="active"><i class='fa fa-user fa-lg'></i> <span>Patient</span></a></li>
-            <li><a ui-sref="phlebotomistindex" ui-sref-active="active"><i class='fa fa-user-md fa-lg'></i> <span>Phlebotomist</span></a></li>
-            <li><a ui-sref="physicianindex" ui-sref-active="active"><i class='fa fa-user-md fa-lg'></i> <span>Physicians</span></a></li>
-            <li><a ui-sref="servicecenterindex" ui-sref-active="active"><i class='fa fa-hospital-o fa-lg'></i> <span>Service Center</span></a></li>
-            <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="#">Link in level 2</a></li>
-                <li><a href="#">Link in level 2</a></li>
-              </ul>
-            </li>
-          </ul><!-- /.sidebar-menu -->
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <li class="header">HEADER</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li><a ui-sref="index" ui-sref-active="active"><i class='fa fa-home fa-lg'></i> <span>Home</span></a>
+                </li>
+                <li><a ui-sref="dashboard" ui-sref-active="active"><i class='fa fa-dashboard fa-lg'></i>
+                    <span>Dashboard</span></a></li>
+                <li class="treeview">
+                    <a><i class='fa fa-calendar fa-lg'></i> <span>Appointment</span> <i
+                            class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a ui-sref="appointmentindex" ui-sref-active="active"><span><i class="fa fa-list"></i>&nbsp; Appointment List</span></a>
+                        </li>
+                        <li><a ui-sref="addappointment"><i class="fa fa-plus"></i>&nbsp;Add New Appointment </a></li>
+                    </ul>
+                </li>
+                <li><a ui-sref="patientindex" ui-sref-active="active"><i class='fa fa-user fa-lg'></i>
+                    <span>Patient</span></a></li>
+                <li><a ui-sref="phlebotomistindex" ui-sref-active="active"><i class='fa fa-user-md fa-lg'></i> <span>Phlebotomist</span></a>
+                </li>
+                <li><a ui-sref="physicianindex" ui-sref-active="active"><i class='fa fa-user-md fa-lg'></i> <span>Physicians</span></a>
+                </li>
+                <li><a ui-sref="servicecenterindex" ui-sref-active="active"><i class='fa fa-hospital-o fa-lg'></i>
+                    <span>Service Center</span></a></li>
+            </ul>
+            <!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
-      </aside>
+    </aside>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper page page-about" data-ui-view="">
-
-      </div><!-- /.content-wrapper -->
-
-      <!-- Main Footer -->
-      <footer class="main-footer">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper ">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1 data-ng-bind="pageHeader">
+                <small data-ng-bind="pageSubHeader"></small>
+            </h1>
+            <!-- <ol class="breadcrumb">
+               <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+               <li class="active">Here</li>
+             </ol>-->
+        </section>
+        <!-- Main content -->
+        <section class="content page page-home" data-ui-view="">
+            <!-- Your Page Content Here -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          Appointment Management System
+            Anything you want
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2015 <a href="#">Group-DR</a>.</strong> All rights reserved.
-      </footer>
-    </div><!-- ./wrapper -->
+        <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
 
-    <!-- REQUIRED JS SCRIPTS -->
+<!-- REQUIRED JS SCRIPTS -->
+<!-- jQuery 2.1.4 -->
+<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.2 JS -->
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<!-- AdminLTE App -->
+<script src="js/app.min.js" type="text/javascript"></script>
 
-    <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.2 JS -->
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- AdminLTE App -->
-    <script src="js/app.min.js" type="text/javascript"></script>
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+      Both of these plugins are recommended to enhance the
+      user experience. Slimscroll is required when using the
+      fixed layout. -->
+<!-- Libraries -->
+<script src="js/angular.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-messages.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/loading-bar.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/angular-resource.min.js"></script>
+<script src="js/select.js"></script>
+<script src="js/angular-strap.min.js"></script>
+<script src="js/angular-strap.tpl.min.js"></script>
 
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-          Both of these plugins are recommended to enhance the
-          user experience. Slimscroll is required when using the
-          fixed layout. -->
-    <!-- Libraries -->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-animate.min.js"></script>
-    <script src="js/angular-messages.min.js"></script>
-    <script src="js/angular-ui-router.min.js"></script>
-    <script src="js/loading-bar.min.js"></script>
-    <script src="js/angular-sanitize.min.js"></script>
+<!-- Custom Scripts (Angular App)-->
 
-    <!-- Custom Scripts (Angular App)-->
-    <!--Angular Module -->
-    <script src="app/app.module.js"></script>
-    <script src="app/app.routes.js"></script>
-    <script src="app/app.config.js"></script>
+<!--Angular Module -->
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
+<script src="app/app.config.js"></script>
+<!-- filters -->
+<script src="app/filters/app.filter.js"></script>
 
-    <!-- Controllers -->
-    <script src="app/controllers/index.controller.js"></script>
-    <script src="app/controllers/appointment.index.controller.js"></script>
-    <script src="app/controllers/dashboard.js"></script>
-    <script src="app/controllers/patient.index.controller.js"></script>
-    <script src="app/controllers/physician.index.controller.js"></script>
-    <script src="app/controllers/phlebotomist.index.controller.js"></script>
-    <script src="app/controllers/servicecenter.index.controller.js"></script>
-  </body>
+<!--Angular Services -->
+<script src="app/services/appointment.service.js"></script>
+<script src="app/services/diagnosis.service.js"></script>
+<script src="app/services/labtest.service.js"></script>
+<script src="app/services/patient.service.js"></script>
+<script src="app/services/servicecenter.service.js"></script>
+<script src="app/services/phlebotomist.service.js"></script>
+
+<!-- Controllers -->
+<script src="app/controllers/index.controller.js"></script>
+<script src="app/controllers/appointment.index.controller.js"></script>
+<script src="app/controllers/dashboard.js"></script>
+<script src="app/controllers/patient.index.controller.js"></script>
+<script src="app/controllers/physician.index.controller.js"></script>
+<script src="app/controllers/phlebotomist.index.controller.js"></script>
+<script src="app/controllers/servicecenter.index.controller.js"></script>
+<script src="app/controllers/appointment.add.controller.js"></script>
+</body>
 </html>

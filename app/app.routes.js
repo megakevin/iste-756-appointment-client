@@ -17,6 +17,12 @@
                 controllerAs: 'vm',
                 templateUrl: 'app/views/appointment.index.html'
             })
+            .state('addappointment', {
+                url: '/addappointment',
+                controller: 'AppointmentAddController',
+                controllerAs: 'vm',
+                templateUrl: 'app/views/appointment.add.html'
+            })
             .state('dashboard', {
                 url:'/dashboard',
                 controller: 'DashboardController',
