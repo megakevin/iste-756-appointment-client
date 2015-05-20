@@ -33,6 +33,7 @@
         vm.resetForm = resetForm;
         vm.addAppointmentLabTest = addAppointmentLabTest;
         vm.removeLabTest = removeLabTest;
+        vm.appointmentCost = 0;
 
         //Activated when this controller is loaded
         activate();
@@ -98,7 +99,9 @@
          * Add item to the collection
          */
         function addAppointmentLabTest(){
-            console.log('adding');
+            //Calculate cost
+            console.log(vm.labtest);
+            vm.appointmentCost += vm.labtest.cost;
             //AppointmentLabTestViewModel
             var appointmentLabTest = {
                 labTestId: vm.labtest.id,
@@ -117,13 +120,7 @@
             vm.appointmentLabTestCollection = _.without(vm.appointmentLabTestCollection, data);
             console.log(vm.appointmentLabTestCollection);
         }
-        /*
-         console.log(vm.appointment);
-         console.log(vm.patient);
-         console.log(vm.phlebotomist);
-         console.log(vm.servicecenter);
-         console.log(vm.labtest);
-         console.log(vm.diagnosis);*/
+
 
         /**
          * Reset the form to its original state
