@@ -9,30 +9,33 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-                    <table class="table table-responsive">
-                        <thead>
-                        <tr>
-                            <th>Patient</th>
-                            <th>Phlebotomy</th>
-                            <th>Service Center</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr data-ng-repeat="appointment in vm.appointments">
-                            <td>{{appointment.patient.name}}</td>
-                            <td>{{appointment.phlebotomist.name}}</td>
-                            <td>{{appointment.psc.name}}</td>
-                            <td>{{appointment.appointmentDate | date: 'mediumDate'}}</td>
-                            <td>{{appointment.appointmentTime | date: 'shortTime'}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <span class="showhide" us-spinner="" spinner-key="load-spinner" spinner-start-active="true"></span>
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Phlebotomy</th>
+                        <th>Service Center</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="animate-repeat" data-ng-repeat="appointment in vm.appointments">
+                        <td>{{appointment.patient.name}}</td>
+                        <td>{{appointment.phlebotomist.name}}</td>
+                        <td>{{appointment.psc.name}}</td>
+                        <td>{{appointment.appointmentDate | date: 'mediumDate'}}</td>
+                        <td>{{appointment.appointmentTime | date: 'shortTime'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" ui-sref="addappointment" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Add New Appointment </button>
+                <button type="submit" ui-sref="addappointment" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Add
+                    New Appointment
+                </button>
             </div>
         </div>
     </div>

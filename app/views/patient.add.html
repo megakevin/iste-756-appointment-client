@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box box-primary ">
+            <div class="box-header with-border">
+                <h3 class="box-title">Complete the patient information</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <!--Content-->
+                <div class="box-body">
+                    <span class="showhide" us-spinner="" spinner-key="load-spinner" spinner-start-active="true"></span>
+                    <form name="addPatientForm" role="form">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" data-ng-model="vm.patient.name" class="form-control"
+                                               placeholder="Enter name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="form-group">
+                                        <label >Address</label>
+                                        <input type="text" class="form-control" data-ng-model="vm.patient.address"
+                                               placeholder="Enter address">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Date</label>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i> </span>
+                                            <input type="text" class="form-control" ng-model="vm.patient.dateofbirth"
+                                                   required
+                                                   name="date" data-autoclose="1" bs-datepicker>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Physician</label>
+                                        <div>
+                                            <ui-select ng-model="vm.patient.physician" theme="select2" ng-disabled="disabled"
+                                                       style="min-width: 100%;">
+                                                <ui-select-match placeholder="Select the physician...">
+                                                    {{$select.selected.name}}
+                                                </ui-select-match>
+                                                <ui-select-choices
+                                                        repeat="p in vm.physicians | propsFilter: {name: $select.search}">
+                                                    <div ng-bind-html="p.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Insurance</label>
+                                        <div class="">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" data-ng-model="vm.patient.insurance" value="y"> Yes
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" data-ng-model="vm.patient.insurance" value="n"> No
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+                    </form>
+                </div>
+                <div class="box-footer">
+                    <button type="reset" data-ng-click="vm.resetForm(addPatientForm)" class="btn btn-warning"><i
+                            class="fa fa-refresh"></i>&nbsp;Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" ng-click="vm.saveData()">
+                        <i class="fa fa-save fa-lg"></i>&nbsp;Save Appointment
+                    </button>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</div>

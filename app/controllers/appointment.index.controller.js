@@ -4,10 +4,10 @@
         .module('app')
         .controller('AppointmentIndexController', AppointmentIndexController);
 
-    AppointmentIndexController.$inject = ['$log', 'AppointmentService','$rootScope'];
+    AppointmentIndexController.$inject = ['$log', 'AppointmentService','$rootScope', 'usSpinnerService'];
 
     /* @ngInject */
-    function AppointmentIndexController($log, AppointmentService, $rootScope) {
+    function AppointmentIndexController($log, AppointmentService, $rootScope, usSpinnerService) {
         /* jshint validthis: true */
         var vm = this;
         $rootScope.pageHeader = "Appointments";
@@ -22,7 +22,9 @@
 
         function activate() {
             $log.info('Activated AppointmentIndexController');
+            usSpinnerService.spin('load-spinner');
             AppointmentService.query().$promise.then(function (data) {
+                usSpinnerService.stop('load-spinner');
                 vm.appointments = data;
             });
         }

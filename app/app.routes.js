@@ -35,6 +35,12 @@
                 controllerAs: 'vm',
                 templateUrl: 'app/views/patient.index.html'
             })
+            .state('addpatient', {
+                url: '/addpatinet',
+                controller: 'PatientAddController',
+                controllerAs: 'vm',
+                templateUrl: 'app/views/patient.add.html'
+            })
             .state('physicianindex', {
                 url:'/physicianindex',
                 controller: 'PhysicianIndexController',

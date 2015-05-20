@@ -1,13 +1,40 @@
 <!-- Content Header (Page header) -->
-<section class="content-header page page-home" data-ui-view="">
-    <h1>
-        Patient
-    </h1>
-</section>
-
 <!-- Main content -->
-<section class="content">
-    <h1>Patient</h1>
-    <!-- Your Page Content Here -->
-
-</section><!-- /.content -->
+<div class="row">
+    <div class="col-sm-12">
+        <!-- Your Page Content Here -->
+        <div class="box box-primary ">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-list-alt"></i> List of patients</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+                <span class="showhide" us-spinner="" spinner-key="load-spinner" spinner-start-active="true"></span>
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Insurance</th>
+                        <th>Address</th>
+                        <th>Physician</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="animate-repeat" data-ng-repeat="patient in vm.patients">
+                        <td>{{patient.name}}</td>
+                        <td>{{patient.insurance}}</td>
+                        <td>{{patient.address}}</td>
+                        <td>{{patient.physician.name }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit" ui-sref="addpatient" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Add
+                    New Patient
+                </button>
+            </div>
+        </div>
+    </div>
+</div><!-- /.content -->
